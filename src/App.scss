@@ -1,0 +1,22 @@
+@import "./assets/fonts/stylesheet.css";
+
+$primary-color: hsl(172, 67%, 45%);
+$neutral-very-dark-cyan: hsl(183, 100%, 15%);
+$neutral-dark-grayish-cyan-first: hsl(184, 14%, 43%);
+$neutral-dark-grayish-cyan-second: hsl(184, 14%, 56%);
+$neutral-light-grayish-cyan-first: hsl(189, 41%, 84%);
+$neutral-light-grayish-cyan-second: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+body {
+  font-family: 'space_monoregular', sans-serif;
+  font-weight: 400;
+}
+
+input {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 1440px)  {
+
+}
