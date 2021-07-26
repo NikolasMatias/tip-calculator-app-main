@@ -1,12 +1,16 @@
 @import "./assets/fonts/stylesheet.css";
 
 $primary-color: hsl(172, 67%, 45%);
+$primary-color-transparent: hsla(172, 67%, 45%, .5);
 $neutral-very-dark-cyan: hsl(183, 100%, 15%);
+$neutral-very-dark-cyan-transparent: hsla(183, 100%, 15%, .5);
 $neutral-dark-grayish-cyan-first: hsl(184, 14%, 43%);
 $neutral-dark-grayish-cyan-second: hsl(184, 14%, 56%);
 $neutral-light-grayish-cyan-first: hsl(189, 41%, 84%);
 $neutral-light-grayish-cyan-second: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
+
+$space-monoregular: 'space_monoregular', sans-serif;
 
 body {
   font-family: 'space_monoregular', sans-serif;
@@ -15,6 +19,23 @@ body {
 
 input {
   font-size: 1.5rem;
+  font-family: $space-monoregular;
+
+  &.error {
+    border: 2px solid hsl(0, 91%, 59%) !important;
+
+    &:before {
+
+    }
+  }
+
+  &.success {
+    border: 2px solid hsl(104, 66%, 56%) !important;
+  }
+}
+
+button {
+  font-family: $space-monoregular;
 }
 
 .tip-calculator {
@@ -196,6 +217,14 @@ input {
           color: $neutral-very-dark-cyan;
           background-color: $primary-color;
           border-radius: 5%;
+          cursor: pointer;
+          border: none;
+
+          &.desactive {
+            color: $neutral-very-dark-cyan-transparent;
+            background-color: $primary-color-transparent;
+            border: none;
+          }
         }
       }
     }
