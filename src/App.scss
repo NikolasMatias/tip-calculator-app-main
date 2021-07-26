@@ -20,13 +20,12 @@ body {
 input {
   font-size: 1.5rem;
   font-family: $space-monoregular;
+  position: relative;
 
   &.error {
     border: 2px solid hsl(0, 91%, 59%) !important;
-
-    &:before {
-
-    }
+    position: relative;
+    width: 100%;
   }
 
   &.success {
@@ -78,6 +77,21 @@ button {
 
         &:focus {
           color: $neutral-very-dark-cyan;
+        }
+      }
+
+      & label.error {
+        &:after {
+          content: 'Can\'t be Zero';
+          position: absolute;
+          color: hsl(0, 91%, 59%);
+          font-family: $space-monoregular;
+          font-size: .75rem;
+          width: 100px;
+          height: 100px;
+          z-index: 3;
+          top: 15px;
+          right: 0;
         }
       }
 
