@@ -17,6 +17,191 @@ input {
   font-size: 1.5rem;
 }
 
+.tip-calculator {
+  & .container {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $neutral-light-grayish-cyan-first;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .title {
+      padding: 30px;
+    }
+
+    & .content {
+      background-color: $white;
+      border-radius: 5%;
+      padding: 10px;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & label {
+        color: $neutral-dark-grayish-cyan-first;
+        font-weight: bold;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      & input {
+        color: $neutral-very-dark-cyan;
+        width: 90%;
+        font-weight: bold;
+        text-align: right;
+        border: 0;
+        background-color: $neutral-light-grayish-cyan-second;
+        padding: 10px 15px 10px 15px;
+
+        &:focus {
+          color: $neutral-very-dark-cyan;
+        }
+      }
+
+      & .bill {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        & label.label-bill {
+          position: relative;
+
+          &:before {
+            content: '';
+            background: url('./assets/images/icon-dollar.svg');
+            position: absolute;
+            width: 10px;
+            height: 18px;
+            bottom: -33px;
+            left: 3vw;
+            z-index: 2;
+          }
+        }
+      }
+
+      & .tip {
+        display: grid;
+        grid-template-columns: repeat(2, 45%);
+        grid-template-rows: minmax(30px, auto) repeat(3, 30px);
+        grid-gap: 20px;
+        padding: 10px;
+
+        & label {
+          grid-column: 1 / -1;
+        }
+
+        & button.btn-tip {
+          text-align: center;
+          justify-content: center;
+          height: 40px;
+          padding-bottom: 10px;
+          font-size: 1.5rem;
+          color: $white;
+          background-color: $neutral-very-dark-cyan;
+          font-weight: bold;
+          border-radius: 5%;
+          cursor: pointer;
+          border: none;
+
+          &:hover, &.clicked {
+            color: $neutral-very-dark-cyan;
+            background-color: $primary-color;
+            border: none;
+          }
+        }
+
+        & input.input-tip-custom {
+          height: 30px;
+          width: 80%;
+
+          &:placeholder-shown {
+            text-align: center;
+          }
+        }
+      }
+
+      & .number-of-people {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        & label.label-number-of-people {
+          position: relative;
+
+          &:before {
+            content: '';
+            background: url('./assets/images/icon-person.svg');
+            position: absolute;
+            width: 14px;
+            height: 17px;
+            bottom: -33px;
+            left: 3vw;
+            z-index: 2;
+          }
+        }
+      }
+
+      & .results {
+        background-color: $neutral-very-dark-cyan;
+        border-radius: 5%;
+        padding: 20px;
+        margin-right: 15px;
+        margin-left: 15px;
+
+        & .results-values {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          & .tip-per-person, & .total-per-person {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin-bottom: 25px;
+
+            & .title-tip-per-person, & .title-total-per-person {
+              color: $neutral-light-grayish-cyan-second;
+
+              & h3 {
+                margin: 0 0 10px 0;
+                position: relative;
+
+                &:before {
+                  content: '/ person';
+                  position: absolute;
+                  color: $neutral-dark-grayish-cyan-second;
+                  font-size: .75rem;
+                  width: 100px;
+                  top: 25px;
+                }
+              }
+            }
+
+            & .value-tip-per-person, & .value-total-per-person {
+              font-size: 2rem;
+              margin: 0;
+              color: $primary-color;
+            }
+          }
+        }
+
+        & .results-reset {
+          width: 100%;
+          font-weight: bold;
+          font-size: 1.1rem;
+          padding: 10px 20px 10px 20px;
+          color: $neutral-very-dark-cyan;
+          background-color: $primary-color;
+          border-radius: 5%;
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 1440px)  {
 
 }
