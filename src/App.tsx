@@ -31,18 +31,18 @@ function App() {
         </div>
         <div className="content">
             <div className="bill">
-              <label htmlFor="bill" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (bill != 0 ? 'label-bill success' : 'label-bill error') : ''}>Bill</label>
+              <label htmlFor="bill" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (bill != 0 ? 'label-bill success' : 'label-bill error') : 'label-bill'}>Bill</label>
               <input type="text" name="bill" id="bill" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (bill != 0 ? 'success' : 'error') : ''} value={bill != 0 ? bill.toFixed(2) : '0'} onChange={(e) => {setBill(e.target.value.length > 0 && /^\d*\.?\d*$/.test(e.target.value) ? parseFloat(e.target.value) : 0)}}/>
             </div>
             <div className="tip">
                 <label>Select Tip %</label>
-              {TipsDefault.map((tipDefault, index, array) => (
+              {TipsDefault.map((tipDefault, index) => (
                   <button key={index} type="button" className={tip == tipDefault.value ? 'btn-tip clicked' : 'btn-tip'} onClick={() => setTip(tipDefault.value)}>{`${tipDefault.value}%`}</button>
               ))}
-              <input type="text" name="tip-custom" placeholder="Custom" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (tip != 0 ? 'input-tip-custom success' : 'input-tip-custom error') : ''} onChange={(e) => setTip(e.target.value.length > 0 ? parseFloat(e.target.value) : 0)}/>
+              <input type="text" name="tip-custom" placeholder="Custom" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (tip != 0 ? 'input-tip-custom success' : 'input-tip-custom error') : 'input-tip-custom'} onChange={(e) => setTip(e.target.value.length > 0 ? parseFloat(e.target.value) : 0)}/>
             </div>
             <div className="number-of-people">
-              <label htmlFor="number-of-people" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (numberOfPeople != 0 ? 'label-number-of-people success' : 'label-number-of-people error') : ''}>Number of People</label>
+              <label htmlFor="number-of-people" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (numberOfPeople != 0 ? 'label-number-of-people success' : 'label-number-of-people error') : 'label-number-of-people'}>Number of People</label>
               <input type="text" name="number-of-people" id="number-of-people" className={(bill != 0 || numberOfPeople != 0 || tip != 0) ? (numberOfPeople != 0 ? 'success' : 'error') : ''}
                      value={numberOfPeople} onChange={(e) => setNumberOfPeople(e.target.value.length > 0 ? parseFloat(e.target.value) : 0)}/>
             </div>

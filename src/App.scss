@@ -148,7 +148,7 @@ button {
         }
 
         & input.input-tip-custom {
-          height: 30px;
+          min-height: 20px !important;
           width: 80%;
 
           &:placeholder-shown {
@@ -246,5 +246,51 @@ button {
 }
 
 @media (min-width: 1440px)  {
+  .tip-calculator {
+    & .container {
+      justify-content: center;
 
+      & .content {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-areas:
+          "bill results"
+          "tip results"
+          "number-of-people results";
+        min-height: 25vh;
+
+        & .bill {
+          grid-area: bill;
+
+          & label.label-bill {
+            position: relative;
+
+            &:before {
+              left: 1vw;
+            }
+          }
+        }
+
+        & .tip {
+          grid-template-columns: repeat(3, 30%);
+          grid-template-rows: minmax(30px, auto) repeat(2, 30px);
+          grid-area: tip;
+        }
+
+        & .number-of-people {
+          grid-area: number-of-people;
+
+          & label.label-number-of-people {
+            &:before {
+              left: 1vw;
+            }
+          }
+        }
+
+        & .results {
+          grid-area: results;
+        }
+      }
+    }
+  }
 }
